@@ -1,7 +1,9 @@
-import React, { useState, useCallback } from "react";
-import { Form, Input, Button } from "antd";
-import styled from "styled-components";
-import Link from "next/link";
+import React, { useState, useCallback } from 'react';
+import { Form, Input, Button } from 'antd';
+import styled from 'styled-components';
+import Link from 'next/link';
+import { useDispatch } from 'react-redux';
+import { loginAction } from '../reducers';
 
 const FormWrapper = styled(Form)`
   padding: 10px;
@@ -21,9 +23,10 @@ const ButtonWrapper = styled.div`
  */
 // const style = useMemo(() => ({ marginTop: 10 }), []);
 
-const LoginForm = ({ setIsLoggedIn }) => {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
+const LoginForm = () => {
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   /** component에 props로 넘겨주는 useCallback(함수를 캐싱)을 써야지
    *  최적화가 진행된다.
@@ -40,9 +43,9 @@ const LoginForm = ({ setIsLoggedIn }) => {
     (e) => {
       // antd에서는 이미 적용되어 있다.
       // e.preventDefault();
-      setIsLoggedIn(true);
+      dispatch(loginAction());
     },
-    [id, password]
+    [id, password],
   );
 
   /**
