@@ -1,6 +1,6 @@
-import { Form, Input } from "antd";
-import React, { useMemo } from "react";
-import styled from "styled-components";
+import { Form, Input } from 'antd';
+import React from 'react';
+import styled from 'styled-components';
 
 const NickNameEditFormWrapper = styled(Form)`
   margin-bottom: 20px;
@@ -8,11 +8,11 @@ const NickNameEditFormWrapper = styled(Form)`
   padding: 30px;
 `;
 
-const NickNameEditForm = (first) => {
+const NickNameEditForm = () => {
   return (
-    <Form>
+    <NickNameEditFormWrapper>
       <Input.Search addonBefore="nickname" enterButton="update"></Input.Search>
-    </Form>
+    </NickNameEditFormWrapper>
   );
 };
 

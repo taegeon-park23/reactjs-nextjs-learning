@@ -40,7 +40,7 @@ const AppLayout = ({ children }) => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            Zerocho
+            taenomoo
           </a>
         </Col>
       </Row>
